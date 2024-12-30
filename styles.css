@@ -1,0 +1,119 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #1a1a2e;
+}
+
+#menu {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #4a4a6e;
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px black;
+}
+
+#menu h1 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#menu h6 {
+    position: absolute;
+    margin-bottom: 150px;
+    width: 60px;
+    height: 10px;
+    transform: rotate(25deg);
+}
+
+#menu button {
+    width: 100px;
+    background-color: #1a1a2e;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 2px 2px 2px black;
+}
+
+#menu button:hover {
+    background-color: #1f1f34;
+    cursor: pointer;
+}
+
+#menu button:active {
+    background-color: #1f1f34;
+}
+
+#game {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#row {
+    display: flex;
+}
+
+#game button {
+    padding: 10px 20px;
+    width: 100px;
+    margin: 5px 50px;
+    margin-top: 10px;
+    border: none;
+    background-color: #666;
+    color: white;
+    border-radius: 5px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#game button:active {
+    background-color: #333;
+}
+
+@media (max-width: 600px) {
+    canvas {
+        width: 360px;
+        height: 200px;
+    }
+
+    #game button {
+        display:flex;
+    }
+}
+
+#loading {
+    display: none;
+    gap: 5px;
+    margin-bottom: 50px;
+}
+
+.line {
+    width: 10px;
+    height: 25px;
+    background-color: #00e0ff;
+    animation: wave 1.2s infinite ease-in-out;
+    animation-delay: calc(var(--i) * 0.2s);
+    transform-origin: center;
+}
+
+.line:nth-child(1) { --i: 0; }
+.line:nth-child(2) { --i: 1; }
+.line:nth-child(3) { --i: 2; }
+.line:nth-child(4) { --i: 3; }
+
+@keyframes wave {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(2);
+    }
+}
